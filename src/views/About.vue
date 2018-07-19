@@ -1,11 +1,17 @@
 <template>
-  <div class="about">
+<div>
     <input type="file" @change="postImageHandler">
     <v-btn @click="upload" to="/about" >upload</v-btn>
+    <v-container>
+      <v-layout row wrap>
+    <v-flex xs6>
     <v-card v-for="(img, index) in result" :key="index">
-      <img :src="img.url" alt="">
+      <img style="max-width:100%" :src="img.url" alt="">
     </v-card>
-  </div>
+    </v-flex>
+    </v-layout>
+    </v-container>
+</div>
 </template>
 
 <script>
